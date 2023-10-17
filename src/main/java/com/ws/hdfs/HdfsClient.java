@@ -37,20 +37,18 @@ public class HdfsClient {
     }
 
 
-
     @Test
     public void testMkdirs() throws IOException {
         // 2 创建目录
-        fs.mkdirs(new Path("/input"));
+        fs.mkdirs(new Path("/inputtopN"));
 
     }
 
     @Test
     public void testCopyFromLocalFile() throws IOException {
         //参数一 删除原数据 参数二 是否允许覆盖，参数三 原数据路径 参数4 目的地路径
-        fs.copyFromLocalFile(false, true, new Path("Z:\\HadoopData\\wordCounterInput\\a.txt"), new Path("hdfs://hadoop102/input"));
+        fs.copyFromLocalFile(false, true, new Path("Z:\\HadoopData\\inputTopN\\data.txt"), new Path("hdfs://hadoop102/inputtopN"));
     }
-
 
 
     @Test
